@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Sheetz card.">
+  <base href="/">
+
+  <div class="btns">
+    <button data-toggle-btn>Toggle Details</button>
+    <button class="backgroundBTN"> Change Background </button>
+    <button class="duplicateBTN"> Duplicate Card </button>
+    <button class="deleteBTN"> Delete Card </button>
+    <button class="headerBTN"> Change Header </button>
+  </div>
+  <div class="container">
+    <div class="wrapper">
+      <h1 class="header">Sheetz</h1>
+      <div class="shake">
+        <h2>Milkshake</h2>
+        <img src= https://orders.sheetz.com/image/anywhere-menu/en/large/sbc_frozen_shake_oreo.png >
+      </div>
+      <div class="Footer">
+        <details class="details">
+          <summary>Details</summary>
+          <p>Cookiez-N-Cream Milkshake: $5.19</p>
+        </details>
+      </div>
+    </div>
+  </div>
+  
+  
+  <style>
+    .container {
+  display: flex;
+}
+.btns {
+  margin: 8px;
+}
+.wrapper {
+  display: grid;
+  grid-template-rows: 0.4fr 2.9fr 0.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Sheetz"
+    "Item"
+    "Footer";
+  background-color: lightgrey;
+  width: 400px;
+  border: 2px solid black;
+  padding: 8px;
+  margin: 16px;
+  border-radius: 5px;}
+
+.header {
+  grid-area: Sheetz;
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 24px;
+}
+
+img {
+  width: 150px;
+}
+
+.shake{
+  grid-area: Item;
+  font-size: 16px;
+  text-align: center;
+  margin: 8px;
+  padding: 8px;
+}
+
+.Footer {
+  grid-area: Footer;
+}
+
+.btns button:hover , .btns button:focus{
+  color: white;
+  background-color: blue;
+}
+
+
+
+@media (max-width: 800px) {
+  .details {
+    display: flex;
+    text-align: right;
+  }
+}
+@media (max-width: 500px) {
+  .details {
+    display: none;
+  }
+  img {
+    width: 96px;
+  }
+.shake {
+  font-size: 12px;
+  }
+}
+
+  </style>
+  
+  <title>my-card</title>
+</head>
+
+<body>
+  <my-card></my-card>
+
+  <script type="module" src="./out-tsc/src/my-card.js"></script>
+</body>
+
+</html>
